@@ -1,14 +1,24 @@
 import Player from "./Player";
-import playerData from "../data/playerData";
-import matchData from "../data/matchData";
-import { preparePlayerData, addWinsToPlayers } from "../helpers/playerHelpers";
 
-function Playerlist() {
+function Playerlist(props) {
+
+  const playerList = props.parsedPlayerData.map(player => {
+    return (
+      <Player
+        id={player.gamerTag}
+        gamerTag={player.gamerTag}
+        firstName={player.firstName}
+        lastName={player.lastName}
+        wins={player.wins}
+      />
+    )
+  })
+
   return (
     <section className="PlayerList">
       <h1>Current participating players</h1>
       {/* Players will be shown here */}
-      <Player />
+      {playerList}
     </section>
   )
 
