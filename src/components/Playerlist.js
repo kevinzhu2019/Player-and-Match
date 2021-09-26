@@ -1,4 +1,7 @@
 import Player from "./Player";
+import playerData from "../data/playerData";
+import matchData from "../data/matchData";
+import { preparePlayerData, addWinsToPlayers } from "../helpers/playerHelpers";
 
 function Playerlist() {
   return (
